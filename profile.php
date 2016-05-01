@@ -142,7 +142,7 @@
 
     // display Messages button
 
-    if( $username== $user ){
+    if( $user=== $username ){
         echo '<form action="" method="post">
                     <input type="submit" name="messages" value="Inbox"/>
                     <input type="submit" name="logout" value="Log Out"/>
@@ -152,10 +152,13 @@
 
     // Add/Remove friends and Send Message system
 
+    echo $user . ' ' . $username;
+
     if( !$same && $username!= "" ){
         
         $ans= are_friends( $user, $username );
         $ans2= friend_request_sent( $username, $user );
+        
         if( $ans=== true ){
             $value= 'Remove Friend';
             $name= 'removefriend';

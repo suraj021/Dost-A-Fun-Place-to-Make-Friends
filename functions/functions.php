@@ -83,7 +83,9 @@
         $query= "SELECT `id` FROM `friend_requests` WHERE `user_from`='$user_from' AND `user_to`='$user_to'";
         $res= $conn->query( $query );
         
-        if( $res )
+        $num_rows= $res->num_rows;
+        
+        if( $num_rows== 1 )
             return true;
         else
             return false;
